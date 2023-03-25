@@ -2,7 +2,7 @@
 .banner {
 	height: 750px;
 	width: 300px;
-	overflow-y:auto
+	overflow-y:auto;
 	box-shadow: 0px 0px 61px 25px rgba(0,0,0,0.4);
 	border-left: 10px solid #AFAFAF;
 	border-right: 10px solid #AFAFAF;
@@ -12,7 +12,7 @@
 .ribbon {
 	height: 80px;
 	width: 720px;
-	overflow-y:auto
+	overflow-y:auto;
 	box-shadow: 0px 0px 61px 25px rgba(0,0,0,0.4);
 	border-top: 10px solid #AFAFAF;
 	border-bottom: 10px solid #AFAFAF;
@@ -29,8 +29,6 @@
 	font-style: normal;
 	font-variant: normal;
 	text-transform: none;
-	
-	/*padding: 0px;*/
 }
 .main {
 	box-shadow: 0px 0px 52px 32px rgba(0,0,0,0.4);
@@ -51,9 +49,8 @@ h1 {
 	border: 2px solid #AFAFAF;
 	border-radius: 5px;
 	width: 600px;
-	margin: auto	
+	margin: auto;
 }
-h2 {}
 p {
 	background-color: #353535;
 	text-align: center;
