@@ -34,7 +34,7 @@ The programming section showcases my technical skills and projects. From web dev
 
 ## Contact
 
-I'd love to connect with fellow musicians, creatives, programmers, and anyone who shares a passion for music, art, and technology. Feel free to reach out to me at [workinginlogic@gmail.com](mailto:workinginlogic@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/yourusername).
+I'd love to connect with fellow musicians, creatives, programmers, and anyone who shares a passion for music, art, and technology. Feel free to reach out to me at [workinginlogic@gmail.com](mailto:workinginlogic@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/).
 
 Thank you for visiting my portfolio website! Enjoy exploring my diverse range of projects and don't hesitate to get in touch.
 
