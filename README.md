@@ -16,7 +16,7 @@ I'm passionate about expressing myself through various mediums, from visual art 
 
 ## Music
 
-Music is another realm where I channel my creativity. Whether it's composing original pieces or experimenting with different genres, music allows me to explore new soundscapes and convey feelings that words alone can't capture.
+Music is a realm where I channel my creativity. Whether it's composing original pieces or experimenting with different genres, music allows me to explore new soundscapes and convey feelings that words alone can't capture.
 
 ![Music](music-screenshot.jpg)
 
