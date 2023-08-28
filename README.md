@@ -22,7 +22,7 @@ Music is a realm where I channel my creativity. Whether it's composing original 
 
 ## Art
 
-In the art section of my portfolio, you'll find a collection of my visual creations. From digital illustrations to traditional paintings, I love experimenting with colors and forms to tell stories and evoke emotions.
+From digital illustrations to traditional paintings, I love experimenting with colors and forms to tell stories and evoke emotions.
 
 ![Art](art-screenshot.jpg)
 
