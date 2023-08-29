@@ -28,7 +28,7 @@ From digital illustrations to traditional paintings, I love experimenting with c
 
 ## Programming
 
-The programming section showcases my technical skills and projects. From web development to software applications, I enjoy solving problems and creating functional, user-friendly experiences through code.
+I enjoy solving problems and creating functional, user-friendly experiences through code.
 
 ![Programming](programming-screenshot.jpg)
 
