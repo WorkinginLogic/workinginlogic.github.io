@@ -22,7 +22,7 @@ Whether it's composing original pieces or experimenting with different genres, m
 
 ## Art
 
-From digital illustrations to traditional paintings, I love experimenting with colors and forms to tell stories and evoke emotions.
+I love experimenting with colors and forms to tell stories and evoke emotions.
 
 ![Art](art-screenshot.jpg)
 
