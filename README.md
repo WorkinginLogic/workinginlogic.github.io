@@ -16,7 +16,7 @@ I'm passionate about expressing myself through various mediums, from composing m
 
 ## Music
 
-Whether it's composing original pieces or experimenting with different genres, music allows me to explore new soundscapes and convey feelings that words alone can't capture.
+Music allows me to explore new soundscapes and convey feelings that words alone can't capture.
 
 ![Music](music-screenshot.jpg)
 
