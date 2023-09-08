@@ -5,32 +5,19 @@ This repository contains the source code for my personal portfolio website where
 ## Contents
 
 - [About Me](#about-me)
-- [Music](#music)
-- [Art](#art)
-- [Programming](#programming)
 - [Contact](#contact)
 
 ## About Me
 
 I'm passionate about expressing myself through various mediums, from composing music and visual art to writing code. With a background in all of these, I bring a unique blend of creativity and technical expertise to my projects.
 
-## Music
-
-Music allows me to explore new soundscapes and convey feelings that words alone can't capture.
-
-![Music](music-screenshot.jpg)
-
-## Art
-
-From digital illustrations to traditional paintings, I love experimenting with colors and forms to tell stories and evoke emotions.
-
-![Art](art-screenshot.jpg)
-
-## Programming
-
-I enjoy solving problems and creating functional, user-friendly experiences through code.
-
-![Programming](programming-screenshot.jpg)
+I'm a 
+musician
+artist
+programmer
+lockpicker
+maker
+hacker
 
 ## Contact
 
