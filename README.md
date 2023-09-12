@@ -1,6 +1,6 @@
 # WiL
 
-This repository contains the source code for my personal portfolio website where I plan to showcase my work in music, art, and programming. Feel free to explore and get a glimpse of my creative and technical endeavors.
+This repository contains the source code for my personal portfolio website where I plan to showcase my work in music, art, and programming.
 
 ## Contents
 
