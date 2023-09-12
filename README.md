@@ -9,7 +9,7 @@ This repository contains the source code for my personal portfolio website where
 
 ## About Me
 
-I'm passionate about expressing myself through various mediums, from composing music and visual art to writing code. With a background in all of these, I bring a unique blend of creativity and technical expertise to my projects.
+Passionate about expressing myself through various mediums, from composing music and visual art to writing code. With a background in all of these, I bring a unique blend of creativity and technical expertise to my projects.
 
 I'm a 
 musician
