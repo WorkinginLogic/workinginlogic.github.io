@@ -1,3 +1,4 @@
+
 /* Reset some default styles */
 body, h1, h2, h3, p {
     margin: 0;
@@ -10,7 +11,6 @@ body {
     color: #eee; /* Light gray text */
     background-color: #111; /* Dark background */
 }
-
 .container {
     max-width: 960px;
     margin: 0 auto;
@@ -19,6 +19,7 @@ body {
 .underlined-letter {
     text-decoration: underline;
 }
+
 /* Header styles */
 header {
     background-color: #222; /* Dark gray */
@@ -55,6 +56,28 @@ h2 {
 .portfolio-item img {
     max-width: 100%;
 }
+
+/* Quiz page stuff */
+.quiz{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    margin: 6px;
+    width: max-content;
+    border: 2px solid #ff8c00;
+}
+
+.quiz > *{
+	margin: 2px;
+}
+
+
+
+
+
 
 /* Footer styles */
 footer {
