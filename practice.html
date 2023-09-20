@@ -1,48 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Practice</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Network+ Practice</h1>
-    
-    <section class="quiz">
-	    <p>Result:</p>
-	    <p id="output" >Results will be shown here.</p>
+    <section>
+      <section class="table">
+        <table border="2">
+          <tr>
+            <th>Decimal</th>
+            <th>256</th>
+            <th>128</th>
+            <th>64</th>
+            <th>32</th>
+            <th>16</th>
+            <th>8</th>
+            <th>4</th>
+            <th>2</th>
+            <th>1</th>
+          </tr>
+          <tr>
+            <th>Binary</th>
+            <td>1 0000 0000</td>
+            <td>1000 0000</td>
+            <td>0100 0000</td>
+            <td>0010 0000</td>
+            <td>0001 0000</td>
+            <td>0000 1000</td>
+            <td>0000 0100</td>
+            <td>0000 0010</td>
+            <td>0000 0001</td>
+          </tr>
+        </table>
+        <table border="2">
+          <tr>
+            <th>Decimal</th>
+            <td>15-10</td>
+            <td>9-0</td>
+          </tr>
+          <tr>
+            <th>Hexadecimal</th>
+            <td>F-A</td>
+            <td>9-0</td>
+          </tr>
+        </table>
+      </section>
     </section>
 
     <section class="quiz">
-        <h2>Binary to Hex</h2>
-        <p>Binary: <span id="randomBinary"></span></p>
-        <p>Answer: <input type="text" id="hexInput" placeholder="Enter Hex"></p>
-        <button id="binaryButton">Submit</button>
-    </section>
-    
-    <section class="quiz">
-        <h2>Hex to Binary</h2>
-        <p>Hex: <span id="randomHex"></span></p>
-        <p>Answer: <input type="text" id="binaryInput" placeholder="Enter a 4-bit Binary"></p>
-        <button id="hexButton">Submit</button>
+      <p>Result:</p>
+      <p id="output">Results will be shown here.</p>
     </section>
 
     <section class="quiz">
-        <h2>Hex to Binary</h2>
-        <p>Hex: <span id="randomHex2"></span></p>
-        <p>Answer: <input type="text" id="binaryInput2" placeholder="Enter an 8-bit Binary"></p>
-        <button id="hexButton2">Submit</button>
+      <h2>Masking Octets</h2>
+      <p>Binary Octet: <span id="octet"></span></p>
+      <p>
+        Answer:
+        <input type="text" id="decimalInput1" placeholder="Enter a Decimal Number" />
+      </p>
+      <button id="decimalButton1">Submit</button>
     </section>
 
     <section class="quiz">
-        <h2>Hex to Decimal</h2>
-        <p>Hex: <span id="randomHex3"></span></p>
-        <p>Answer: <input type="text" id="decimalInput" placeholder="Enter a Decimal Number"></p>
-        <button id="decimalButton">Submit</button>
+      <h2>Binary to Hex</h2>
+      <p>Binary: <span id="randomBinary"></span></p>
+      <p>Answer: <input type="text" id="hexInput" placeholder="Enter Hex" /></p>
+      <button id="binaryButton">Submit</button>
+    </section>
+
+    <section class="quiz">
+      <h2>Hex to Binary</h2>
+      <p>Hex: <span id="randomHex"></span></p>
+      <p>
+        Answer:
+        <input
+          type="text"
+          id="binaryInput"
+          placeholder="Enter a 4-bit Binary"
+        />
+      </p>
+      <button id="hexButton">Submit</button>
+    </section>
+
+    <section class="quiz">
+      <h2>Hex to Binary</h2>
+      <p>Hex: <span id="randomHex2"></span></p>
+      <p>
+        Answer:
+        <input
+          type="text"
+          id="binaryInput2"
+          placeholder="Enter an 8-bit Binary"
+        />
+      </p>
+      <button id="hexButton2">Submit</button>
+    </section>
+
+    <section class="quiz">
+      <h2>Hex to Decimal</h2>
+      <p>Hex: <span id="randomHex3"></span></p>
+      <p>
+        Answer:
+        <input
+          type="text"
+          id="decimalInput"
+          placeholder="Enter a Decimal Number"
+        />
+      </p>
+      <button id="decimalButton">Submit</button>
     </section>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
-

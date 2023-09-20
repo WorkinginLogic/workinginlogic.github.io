@@ -75,7 +75,21 @@ h2 {
 }
 
 
+.table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    margin: 6px;
+    width: max-content;
+}
 
+table, th, td {
+    border: 2px solid #ff8c00;
+    border-collapse: collapse;
+}
 
 
 
