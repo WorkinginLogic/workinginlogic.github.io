@@ -57,7 +57,7 @@ function updateOutput4(randomOctet) {
   if (decInput === correctDec.toString()) {
     outputElement.textContent = "Correct!";
   } else {
-    outputElement.textContent = `Wrong. The correct answer is ${correctDec}.${decInput}`;
+    outputElement.textContent = `Wrong. The correct answer is ${correctDec}.`;
   }
 }
 
