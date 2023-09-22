@@ -3,14 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta name="description" content="Network Plus Conversion Practice">
+    <link rel="stylesheet" type="text/css" href="study.css" />
     <title>Practice</title>
     <link rel="icon" type"image/x-icon" href="slidelie.png">
   </head>
   <body>
-    <h1>Network+ Practice</h1>
+    <h1 id="title">Network+ Practice</h1>
+    <section id="navRibbon">
+      <ul>
+          <li><a href="practice.html">practice</a></li>
+          <li><a href="acronyms.html">acronyms</a></li>
+          <li><button id="hide" class="navButton">Show / Hide Reference</button></li>
+      </ul>
+  </section>
     <section>
-      <button id="hide">Show / Hide Reference</button>
       <section class="refTable">
         <table border="2">
           <tr>
@@ -58,7 +65,7 @@
       <p id="output">Results will be shown here.</p>
     </section>
 
-    <section class="quiz">
+    <section class="module">
       <h2>Masking Octets</h2>
       <p>Binary Octet: <span id="octet"></span></p>
       <p>
@@ -68,14 +75,14 @@
       <button id="decimalButton1">Submit</button>
     </section>
 
-    <section class="quiz">
+    <section class="module">
       <h2>Binary to Hex</h2>
       <p>Binary: <span id="randomBinary"></span></p>
       <p>Answer: <input type="text" id="hexInput" placeholder="Enter Hex" /></p>
       <button id="binaryButton">Submit</button>
     </section>
 
-    <section class="quiz">
+    <section class="module">
       <h2>Hex to Binary</h2>
       <p>Hex: <span id="randomHex"></span></p>
       <p>
@@ -89,7 +96,7 @@
       <button id="hexButton">Submit</button>
     </section>
 
-    <section class="quiz">
+    <section class="module">
       <h2>Hex to Binary</h2>
       <p>Hex: <span id="randomHex2"></span></p>
       <p>
@@ -103,7 +110,7 @@
       <button id="hexButton2">Submit</button>
     </section>
 
-    <section class="quiz">
+    <section class="module">
       <h2>Hex to Decimal</h2>
       <p>Hex: <span id="randomHex3"></span></p>
       <p>
@@ -119,4 +126,4 @@
 
     <script src="script.js"></script>
   </body>
-</html>
+  </html>

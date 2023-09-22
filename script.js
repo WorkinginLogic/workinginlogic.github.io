@@ -3,7 +3,7 @@
 var hideButton = document.getElementById("hide");
 var refTable = document.querySelector(".refTable");
 hideButton.addEventListener("click", function () {
-  if (refTable.style.display === "none" || refTable.style.display === "") {
+  if (refTable.style.display === "none") {
     refTable.style.display = "block"; // show refTable
   } else {
     refTable.style.display = "none"; // Hide refTable
@@ -298,3 +298,10 @@ decimalInput.addEventListener("keydown", function (event) {
     currentRandomHex3 = generateNewQuestion3();
   }
 });
+
+
+
+
+
+/* --- acronym --- */
+
