@@ -1,5 +1,41 @@
-/* --- Show / Hide refTable --- */
+/*
+ * Generates a new question for the module (Needs #module to have a .promt and .input)
+ *
+ *@param {string} x - Module ID.
+ *@param {function} y - Takes a function to generate new value.
+ *@returns {number} - newNumber
+ */
+function generateNewQuestion(x, y) {
+  const moduleId = document.getElementById(x);
+  const promptElement = moduleId.querySelector(".prompt");
+  const inputElement = moduleId.querySelector(".input");
+  const newNumber = y();
+  promptElement.textContent = `${newNumber}`;
+  inputElement.value = "";
+  return newNumber;
+}
 
+/*
+ * Generates a new question for the module (Needs #module to have an .input and .output)
+ *
+ *@param {string} - Module ID.
+ *@param {number} - The number to be compared.
+ *@returns {} - newNumber
+ */
+function updateOutput(x, y) {
+  const moduleId = document.getElementById(x);
+  const inputElement = moduleId.querySelector(".input");
+  const outputElement = moduleId.querySelector(".output");
+  const number = y;
+
+  if (inputElement.value === number.toString()) {
+    outputElement.textContent = "Correct!";
+  } else {
+    outputElement.textContent = `Wrong. The correct answer is ${number}`;
+  }
+}
+
+/* --- Show / Hide refTable --- */
 var hideButton = document.getElementById("hide");
 var refTable = document.querySelector(".refTable");
 hideButton.addEventListener("click", function () {
@@ -10,8 +46,7 @@ hideButton.addEventListener("click", function () {
   }
 });
 
-/* --- Masking Octet --- */
-
+/* --- Masking Octets --- */
 const maskOctets = [
   "10000000",
   "11000000",
@@ -37,48 +72,23 @@ function binaryToDecimal(binary) {
   return parseInt(binary, 2);
 }
 
-function generateNewQuestion4() {
-  const octetElement = document.getElementById("octet");
-  const outputElement = document.getElementById("output");
-  const decimalInput1 = document.getElementById("decimalInput1");
-
-  const randomOctet = pickOctet();
-  octetElement.textContent = `${randomOctet}`;
-  decimalInput1.value = "";
-
-  return randomOctet;
-}
-
-function updateOutput4(randomOctet) {
-  const decInput = document.getElementById("decimalInput1").value;
-  const outputElement = document.getElementById("output");
-  const correctDec = binaryToDecimal(randomOctet);
-
-  if (decInput === correctDec.toString()) {
-    outputElement.textContent = "Correct!";
-  } else {
-    outputElement.textContent = `Wrong. The correct answer is ${correctDec}.`;
-  }
-}
-
 const decimalButton1 = document.getElementById("decimalButton1");
-let currentRandomOctet = generateNewQuestion4();
+let currentRandomOctet = generateNewQuestion("octets", pickOctet);
 
 decimalButton1.addEventListener("click", function () {
-  updateOutput4(currentRandomOctet);
-  currentRandomOctet = generateNewQuestion4();
+  updateOutput("octets", binaryToDecimal(currentRandomOctet));
+  currentRandomOctet = generateNewQuestion("octets", pickOctet);
 });
 
 decimalInput1.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
-    updateOutput4(currentRandomOctet);
-    currentRandomOctet = generateNewQuestion4();
+    updateOutput("octets", binaryToDecimal(currentRandomOctet));
+    currentRandomOctet = generateNewQuestion("octets", pickOctet);
   }
 });
 
 /* --- Binary to Hex ---  */
-
 function randomNibble() {
   return (Math.floor(Math.random() * 15) + 1).toString(2).padStart(4, "0");
 }
@@ -88,48 +98,23 @@ function binaryToHex(b) {
   return integer.toString(16);
 }
 
-function generateNewQuestion() {
-  const randomBinaryElement = document.getElementById("randomBinary");
-  const outputElement = document.getElementById("output");
-  const hexInput = document.getElementById("hexInput");
-
-  const randomBinary = randomNibble();
-  randomBinaryElement.textContent = `${randomBinary}`;
-  hexInput.value = "";
-
-  return randomBinary;
-}
-
-function updateOutput(randomBinary) {
-  const hexInput = document.getElementById("hexInput").value;
-  const outputElement = document.getElementById("output");
-  const correctHex = binaryToHex(randomBinary);
-
-  if (hexInput === correctHex) {
-    outputElement.textContent = "Correct!";
-  } else {
-    outputElement.textContent = `Wrong. The correct answer is ${correctHex}.`;
-  }
-}
-
 const binaryButton = document.getElementById("binaryButton");
-let currentRandomBinary = generateNewQuestion();
+let currentRandomBinary = generateNewQuestion("binary2Hex", randomNibble);
 
 binaryButton.addEventListener("click", function () {
-  updateOutput(currentRandomBinary);
-  currentRandomBinary = generateNewQuestion();
+  updateOutput("binary2Hex", binaryToHex(currentRandomBinary));
+  currentRandomBinary = generateNewQuestion("binary2Hex", randomNibble);
 });
 
 hexInput.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
-    updateOutput(currentRandomBinary);
-    currentRandomBinary = generateNewQuestion();
+    updateOutput("binary2Hex", binaryToHex(currentRandomBinary));
+    currentRandomBinary = generateNewQuestion("binary2Hex", randomNibble);
   }
 });
 
 /* --- Hex to Binary --- */
-
 function randomHexadecimal() {
   const characters = "0123456789ABCDEF";
   let result = "";
@@ -144,49 +129,24 @@ function hexToBinary(hex) {
   return binary.padStart(4, "0");
 }
 
-function generateNewQuestion1() {
-  const randomHexElement = document.getElementById("randomHex");
-  const outputElement = document.getElementById("output");
-  const binaryInput = document.getElementById("binaryInput");
-
-  const randomHex = randomHexadecimal();
-  randomHexElement.textContent = `${randomHex}`;
-  binaryInput.value = "";
-
-  return randomHex;
-}
-
-function updateOutput1(randomHex) {
-  const binaryInput = document.getElementById("binaryInput").value;
-  const outputElement = document.getElementById("output");
-  const correctBinary = hexToBinary(randomHex);
-
-  if (binaryInput === correctBinary) {
-    outputElement.textContent = "Correct!";
-  } else {
-    outputElement.textContent = `Wrong. The correct answer is ${correctBinary}.`;
-  }
-}
-
 const hexButton = document.getElementById("hexButton");
 const binaryInput = document.getElementById("binaryInput");
-let currentRandomHex = generateNewQuestion1();
+let currentRandomHex = generateNewQuestion("hex2Binary", randomHexadecimal);
 
 hexButton.addEventListener("click", function () {
-  updateOutput1(currentRandomHex);
-  currentRandomHex = generateNewQuestion1();
+  updateOutput("hex2Binary", hexToBinary(currentRandomHex));
+  currentRandomHex = generateNewQuestion("hex2Binary", randomHexadecimal);
 });
 
 binaryInput.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
-    updateOutput1(currentRandomHex);
-    currentRandomHex = generateNewQuestion1();
+    updateOutput("hex2Binary", hexToBinary(currentRandomHex));
+    currentRandomHex = generateNewQuestion("hex2Binary", randomHexadecimal);
   }
 });
 
 /* --- Double Hex to Binary --- */
-
 function randomHexadecimal2() {
   const characters = "0123456789ABCDEF";
   let result = "";
@@ -201,49 +161,24 @@ function hexToBinary2(hex) {
   return binary.padStart(8, "0");
 }
 
-function generateNewQuestion2() {
-  const randomHexElement = document.getElementById("randomHex2");
-  const outputElement = document.getElementById("output");
-  const binaryInput = document.getElementById("binaryInput2");
-
-  const randomHex = randomHexadecimal2();
-  randomHexElement.textContent = `${randomHex}`;
-  binaryInput.value = "";
-
-  return randomHex;
-}
-
-function updateOutput2(randomHex) {
-  const binaryInput = document.getElementById("binaryInput2").value;
-  const outputElement = document.getElementById("output");
-  const correctBinary = hexToBinary2(randomHex);
-
-  if (binaryInput === correctBinary) {
-    outputElement.textContent = "Correct!";
-  } else {
-    outputElement.textContent = `Wrong. The correct answer is ${correctBinary}.`;
-  }
-}
-
 const hexButton2 = document.getElementById("hexButton2");
 const binaryInput2 = document.getElementById("binaryInput2");
-let currentRandomHex2 = generateNewQuestion2();
+let currentRandomHex2 = generateNewQuestion("hex2Binary2", randomHexadecimal2);
 
 hexButton2.addEventListener("click", function () {
-  updateOutput2(currentRandomHex2);
-  currentRandomHex2 = generateNewQuestion2();
+  updateOutput("hex2Binary2", hexToBinary2(currentRandomHex2));
+  currentRandomHex2 = generateNewQuestion("hex2Binary2", randomHexadecimal2);
 });
 
 binaryInput2.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
-    updateOutput2(currentRandomHex2);
-    currentRandomHex2 = generateNewQuestion2();
+    updateOutput("hex2Binary2", hexToBinary2(currentRandomHex2));
+    currentRandomHex2 = generateNewQuestion("hex2Binary2", randomHexadecimal2);
   }
 });
 
 /* --- Hex to Decimal --- */
-
 function randomHexadecimal3() {
   const characters = "0123456789ABCDEF";
   let result = "";
@@ -258,50 +193,19 @@ function hexToDecimal(hex) {
   return decimal;
 }
 
-function generateNewQuestion3() {
-  const randomHexElement = document.getElementById("randomHex3");
-  const outputElement = document.getElementById("output");
-  const decimalInput = document.getElementById("decimalInput");
-
-  const randomHex = randomHexadecimal3();
-  randomHexElement.textContent = `${randomHex}`;
-  decimalInput.value = "";
-
-  return randomHex;
-}
-
-function updateOutput3(randomHex) {
-  const decimalInput = document.getElementById("decimalInput").value;
-  const outputElement = document.getElementById("output");
-  const correctDecimal = hexToDecimal(randomHex);
-
-  if (decimalInput === correctDecimal.toString()) {
-    outputElement.textContent = "Correct!";
-  } else {
-    outputElement.textContent = `Wrong. The correct answer is ${correctDecimal}.`;
-  }
-}
-
 const decimalButton = document.getElementById("decimalButton");
 const decimalInput = document.getElementById("decimalInput");
-let currentRandomHex3 = generateNewQuestion3();
+let currentRandomHex3 = generateNewQuestion("hex2Decimal", randomHexadecimal3);
 
 decimalButton.addEventListener("click", function () {
-  updateOutput3(currentRandomHex3);
-  currentRandomHex3 = generateNewQuestion3();
+  updateOutput("hex2Decimal", hexToDecimal(currentRandomHex3));
+  currentRandomHex3 = generateNewQuestion("hex2Decimal", randomHexadecimal3);
 });
 
 decimalInput.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
-    updateOutput3(currentRandomHex3);
-    currentRandomHex3 = generateNewQuestion3();
+    updateOutput("hex2Decimal", hexToDecimal(currentRandomHex3));
+    currentRandomHex3 = generateNewQuestion("hex2Decimal", randomHexadecimal3);
   }
 });
-
-
-
-
-
-/* --- acronym --- */
-

@@ -8,6 +8,7 @@
     <title>Practice</title>
     <link rel="icon" type"image/x-icon" href="slidelie.png">
   </head>
+
   <body>
     <h1 id="title">Network+ Practice</h1>
     <section id="navRibbon">
@@ -61,73 +62,84 @@
         </table>
       </section>
     </section>
-
-    <section class="result">
-      <p>Result:</p>
-      <p id="output">Results will be shown here.</p>
-    </section>
-
-    <section class="module">
+    <section id="octets" class="module">
       <h2>Masking Octets</h2>
-      <p>Binary Octet: <span id="octet"></span></p>
+      <p>Binary Octet: <span class="prompt"></span></p>
       <p>
         Answer:
         <input
           type="text"
           id="decimalInput1"
+          class="input"
           placeholder="Enter a Decimal Number"
         />
       </p>
-      <button id="decimalButton1">Submit</button>
+      <button id="decimalButton1" class="button">Submit</button>
+      <p class="output"></p>
     </section>
 
-    <section class="module">
+    <section id="binary2Hex" class="module">
       <h2>Binary to Hex</h2>
-      <p>Binary: <span id="randomBinary"></span></p>
-      <p>Answer: <input type="text" id="hexInput" placeholder="Enter Hex" /></p>
+      <p>Binary: <span id="randomBinary" class="prompt"></span></p>
+      <p>
+        Answer:
+        <input
+          type="text"
+          id="hexInput"
+          class="input"
+          placeholder="Enter Hex"
+        />
+      </p>
       <button id="binaryButton">Submit</button>
+      <p id="" class="output"></p>
     </section>
 
-    <section class="module">
+    <section id="hex2Binary" class="module">
       <h2>Hex to Binary</h2>
-      <p>Hex: <span id="randomHex"></span></p>
+      <p>Hex: <span id="randomHex" class="prompt"></span></p>
       <p>
         Answer:
         <input
           type="text"
           id="binaryInput"
+          class="input"
           placeholder="Enter a 4-bit Binary"
         />
       </p>
       <button id="hexButton">Submit</button>
+      <p id="" class="output"></p>
     </section>
 
-    <section class="module">
+    <section id="hex2Binary2" class="module">
       <h2>Hex to Binary</h2>
-      <p>Hex: <span id="randomHex2"></span></p>
+      <p>Hex: <span id="randomHex2" class="prompt"></span></p>
       <p>
         Answer:
         <input
           type="text"
           id="binaryInput2"
+          class="input"
           placeholder="Enter an 8-bit Binary"
         />
       </p>
       <button id="hexButton2">Submit</button>
+      <p id="" class="output"></p>
     </section>
 
-    <section class="module">
+    <section id="hex2Decimal" class="module">
       <h2>Hex to Decimal</h2>
-      <p>Hex: <span id="randomHex3"></span></p>
+      <p>Hex: <span id="randomHex3" class="prompt"></span></p>
       <p>
         Answer:
         <input
           type="text"
           id="decimalInput"
+          class="input"
           placeholder="Enter a Decimal Number"
         />
       </p>
       <button id="decimalButton">Submit</button>
+      <p id="" class="output"></p>
     </section>
 
     <script src="script.js"></script>
