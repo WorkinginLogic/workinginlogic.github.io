@@ -36,8 +36,8 @@ function updateOutput(x, y) {
 }
 
 /* --- Show / Hide refTable --- */
-var hideButton = document.getElementById("hide");
-var refTable = document.querySelector(".refTable");
+let hideButton = document.getElementById("hide");
+let refTable = document.querySelector(".refTable");
 hideButton.addEventListener("click", function () {
   if (refTable.style.display === "none") {
     refTable.style.display = "flex"; // show refTable
@@ -60,7 +60,7 @@ const maskOctets = [
 
 let previousOctet = "";
 function pickOctet() {
-  var randomOctet;
+  let randomOctet;
   do {
     randomOctet = maskOctets[Math.floor(Math.random() * maskOctets.length)];
   } while (randomOctet === previousOctet);
