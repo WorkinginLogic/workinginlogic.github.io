@@ -4,7 +4,7 @@ var hideButton = document.getElementById("hide");
 var refTable = document.querySelector(".refTable");
 hideButton.addEventListener("click", function () {
   if (refTable.style.display === "none") {
-    refTable.style.display = "block"; // show refTable
+    refTable.style.display = "flex"; // show refTable
   } else {
     refTable.style.display = "none"; // Hide refTable
   }
