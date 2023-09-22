@@ -151,6 +151,7 @@ h2 {
   padding: 10px;
   margin: 6px;
   width: max-content;
+  display: none;
 }
 
 table,

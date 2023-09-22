@@ -39,7 +39,7 @@ function updateOutput(x, y) {
 let hideButton = document.getElementById("hide");
 let refTable = document.querySelector(".refTable");
 hideButton.addEventListener("click", function () {
-  if (refTable.style.display === "none") {
+  if (refTable.style.display === "none" || refTable.style.display === "") {
     refTable.style.display = "flex"; // show refTable
   } else {
     refTable.style.display = "none"; // Hide refTable
