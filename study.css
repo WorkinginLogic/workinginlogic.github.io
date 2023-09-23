@@ -157,6 +157,7 @@ h2 {
 table,
 th,
 td {
+  margin: 6px;
   border: 2px solid #ff8c00;
   border-collapse: collapse;
   background-color: #181825;
