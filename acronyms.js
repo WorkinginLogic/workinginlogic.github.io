@@ -1,15 +1,3 @@
-
-
-
-/* --- Acronyms --- */
-const acronymList = [
-  { acronym: "", fullForm: "" },
-  { acronym: "", fullForm: "" },
-  { acronym: "", fullForm: "" },
-  { acronym: "", fullForm: "" },
-  { acronym: "", fullForm: "" },
-];
-
 /* --- Show / Hide  --- */
 /*  || answers.style.display === "" */
 
@@ -33,3 +21,66 @@ hideWords.addEventListener("click", function () {
     words.style.display = "none";
   }
 });
+
+/*
+ * Generates a new question for the module (Needs #module to have a .promt and .input)
+ *
+ *@param {string} x - Module ID.
+ *@param {function} y - Takes a function to generate new value.
+ *@returns {number} - newNumber
+ */
+function generateNewQuestion(x, y) {
+  const moduleId = document.getElementById(x);
+  const promptElement = moduleId.querySelector(".prompt");
+  const inputElement = moduleId.querySelector(".input");
+  const newNumber = y();
+  promptElement.textContent = `${newNumber}`;
+  inputElement.value = "";
+  return newNumber;
+}
+
+/*
+ * Generates a new question for the module (Needs #module to have an .input and .output)
+ *
+ *@param {string} - Module ID.
+ *@param {number} - The number to be compared.
+ *@returns {} - newNumber
+ */
+function updateOutput(x, y) {
+  const moduleId = document.getElementById(x);
+  const inputElement = moduleId.querySelector(".input");
+  const outputElement = moduleId.querySelector(".output");
+  const number = y;
+
+  if (inputElement.value === number.toString()) {
+    outputElement.textContent = "Correct!";
+  } else {
+    outputElement.textContent = `Wrong. The correct answer is ${number}`;
+  }
+}
+
+/* --- Acronyms --- */
+const acronymDictionary = {
+  AAAA: "Authentication, Authorizaton, Accounting, Auditing",
+};
+
+/* --- Quiz --- */
+
+const randomAcronym = getRandomAcronym(acronymDictionary);
+const userInput = document.getElementById("userInput");
+const outputElement = document.getElementById("output")
+
+if (
+  userInput === acronymDictionary[randomAcronym].toLowerCase()
+) {
+  outputElement.textContent = "Correct!";
+} else {
+  outputElement.textContent = `Wrong. The correct answer is`;
+  alert(userInput);
+}
+
+function getRandomAcronym(dictionary) {
+  const keys = Object.keys(dictionary);
+  const randomKey = keys[Math.floor(Math.random() * keys.length)];
+  return randomKey;
+}
