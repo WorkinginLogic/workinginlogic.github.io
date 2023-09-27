@@ -106,6 +106,16 @@ pre {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+
+#videos a {
+  color: #fe640b;
+  text-decoration: none;
+}
+
+#videos a:hover {
+  color: #fab387;
+}
+
 .result {
   display: flex;
   flex-direction: column;
