@@ -11,13 +11,7 @@ p {
 body {
   font-family: Arial, sans-serif;
   color: #bac2de;
-  background-color: #313244;
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
+  background-color: #181825;
 }
 
 .underlined-letter {
@@ -100,16 +94,6 @@ h2 {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* =========================================== */
-
-.portfolio-item {
-  margin-bottom: 40px;
-}
-
-.portfolio-item img {
-  max-width: 100%;
-}
-
 .result {
   display: flex;
   flex-direction: column;
@@ -138,8 +122,19 @@ h2 {
   float: left;
 }
 
-.quiz > * {
-  margin: 2px;
+.conversions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: max-content;
+  padding: 10px;
+  margin: 6px;
+  background-color: #313244;
+  border: 2px solid #ff8c00;
+  border-radius: 12px;
+  float: left;
 }
 
 .refTable {

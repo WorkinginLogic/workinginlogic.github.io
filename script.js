@@ -20,7 +20,7 @@ function generateNewQuestion(x, y) {
  *
  *@param {string} - Module ID.
  *@param {number} - The number to be compared.
- *@returns {} - newNumber
+ *@returns {} - 
  */
 function updateOutput(x, y) {
   const moduleId = document.getElementById(x);
@@ -31,7 +31,7 @@ function updateOutput(x, y) {
   if (inputElement.value === number.toString()) {
     outputElement.textContent = "Correct!";
   } else {
-    outputElement.textContent = `Wrong. The correct answer is ${number}`;
+    outputElement.textContent = `Wrong. The correct answer was ${number}`;
   }
 }
 

@@ -44,7 +44,7 @@ function generateNewQuestion(x, y) {
  *
  *@param {string} - Module ID.
  *@param {number} - The number to be compared.
- *@returns {} - newNumber
+ *@returns {} - 
  */
 function updateOutput(x, y) {
   const moduleId = document.getElementById(x);
@@ -76,7 +76,6 @@ if (
   outputElement.textContent = "Correct!";
 } else {
   outputElement.textContent = `Wrong. The correct answer is`;
-  alert(userInput);
 }
 
 function getRandomAcronym(dictionary) {
