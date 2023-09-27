@@ -8,6 +8,10 @@ p {
   padding: 0;
 }
 
+ul li {
+  list-style: none;
+}
+
 body {
   font-family: Arial, sans-serif;
   color: #bac2de;
@@ -15,6 +19,10 @@ body {
 }
 
 .underlined-letter {
+  text-decoration: underline;
+}
+
+.underlined {
   text-decoration: underline;
 }
 
@@ -40,6 +48,10 @@ h2 {
   color: #ff8c00;
 }
 
+pre {
+  text-align: left;
+  color: #cdd6f4;
+}
 #title {
   background-color: #181825;
 }
@@ -137,6 +149,9 @@ h2 {
   float: left;
 }
 
+.lessonButton {
+  float: left;
+}
 .refTable {
   display: flex;
   flex-direction: column;
