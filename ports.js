@@ -23,12 +23,24 @@ const questionPairs = [
   { question: "tftp | Trivial File Transfer Protocol", answer: "UDP 69" },
   { question: "http | HTTP", answer: "TCP 80" },
   { question: "pop | Post Office Protocol", answer: "TCP 110" },
-  { question: "ntp/sntp | Network Time Protocol / Simple NTP", answer: "UDP 123" },
+  {
+    question: "ntp/sntp | Network Time Protocol / Simple NTP",
+    answer: "UDP 123",
+  },
   { question: "imap | Internet Message Access Protocol", answer: "TCP 143" },
   { question: "snmp | Simple Network Management Protocol", answer: "UDP 161" },
-  { question: "snmp-trap | Simple Network Management Protocol Trap", answer: "UDP 162" },
-  { question: "ldap | Lightweight Directory Access Protocol", answer: "TCP/UDP 389" },
-  { question: "https | HTTP - Secure (Secure Sockets Layer(SSL) / Transport Layer Security(TLS)", answer: "TCP 443" },
+  {
+    question: "snmp-trap | Simple Network Management Protocol Trap",
+    answer: "UDP 162",
+  },
+  {
+    question: "ldap | Lightweight Directory Access Protocol",
+    answer: "TCP/UDP 389",
+  },
+  {
+    question:
+      "https | HTTP-Secure / Secure Sockets Layer(SSL) / Transport Layer Security(TLS)", answer: "TCP 443",
+  },
   { question: "smb | Server Message Block over TCP / IP", answer: "TCP 445" },
   { question: "syslog | Syslog", answer: "UDP 514" },
   { question: "dhcpv6-client | DHCP6 Client", answer: "UDP 546" },
@@ -37,7 +49,10 @@ const questionPairs = [
   { question: "ldaps | LDAP - Secure", answer: "TCP 636" },
   { question: "imaps | IMAP - Secure", answer: "TCP 993" },
   { question: "pop3s | POP3 - Secure", answer: "TCP 995" },
-  { question: "sql-server | MS Structured Query Language (SQL) Server", answer: "TCP 1433" },
+  {
+    question: "sql-server | MS Structured Query Language (SQL) Server",
+    answer: "TCP 1433",
+  },
   { question: "sqlnet | Oracle SQL *Net", answer: "TCP 1521" },
   { question: "mysql | MySQL / MariaDB", answer: "TCP 3306" },
   { question: "rdp | Remote Desktop Protocol", answer: "TCP 3389" },
