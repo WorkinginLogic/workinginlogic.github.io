@@ -209,3 +209,20 @@ decimalInput.addEventListener("keydown", function (event) {
     currentRandomHex3 = generateNewQuestion("hex2Decimal", randomHexadecimal3);
   }
 });
+
+/* --- Binary to Decimal --- */
+/*
+  binary2Decimal
+  randomBinary1
+  decimalInput2
+*/
+
+/* --- Decimal to Binary --- */
+/*
+
+*/
+
+/* --- Decimal to Hex --- */
+/*
+
+*/
