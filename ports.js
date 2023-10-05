@@ -100,7 +100,7 @@ function updateOutput(moduleId, correctAnswer) {
   const userAnswer = inputElement.value;
   if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
     outputElement.textContent = "Correct!";
-    correctElement.textContent += "hi ";
+    /*correctElement.textContent += "hi ";*/
   } else {
     outputElement.textContent = `Wrong. The correct answer was ${correctAnswer}.`;
   }
