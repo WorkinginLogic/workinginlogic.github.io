@@ -20,7 +20,7 @@ function generateNewQuestion(x, y) {
  *
  *@param {string} - Module ID.
  *@param {number} - The number to be compared.
- *@returns {} - 
+ *@returns {} -
  */
 function updateOutput(x, y) {
   const moduleId = document.getElementById(x);

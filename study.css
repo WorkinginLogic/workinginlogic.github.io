@@ -107,12 +107,13 @@ pre {
 }
 
 
-#videos a {
+.videos a {
   color: #fe640b;
   text-decoration: none;
+  padding: 25px;
 }
 
-#videos a:hover {
+.videos a:hover {
   color: #fab387;
 }
 
@@ -161,6 +162,11 @@ pre {
 
 .lessonButton {
   float: left;
+}
+
+#lessonButtons {
+  height: 25px;
+  width: 100%;
 }
 .refTable {
   display: flex;
@@ -240,3 +246,4 @@ footer {
     gap: 10px;
   }
 }
+

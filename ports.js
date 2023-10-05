@@ -9,6 +9,17 @@ hideButton.addEventListener("click", function () {
   }
 });
 
+var hideAnswers = document.getElementById("hideAnswers");
+var answers = document.querySelector("#answers");
+
+hideAnswers.addEventListener("click", function () {
+  if (answers.style.display === "none") {
+    answers.style.display = "block";
+  } else {
+    answers.style.display = "none";
+  }
+});
+
 /* --- Ports --- */
 // Define an array of question-answer pairs
 const questionPairs = [
@@ -83,10 +94,13 @@ function updateOutput(moduleId, correctAnswer) {
   const moduleIdElement = document.getElementById(moduleId);
   const inputElement = document.getElementById("userInput");
   const outputElement = moduleIdElement.querySelector(".output");
+  const correctElement = document.getElementById("correct-answers");
+  const wrongElement = document.getElementById("wrong-answers");
 
   const userAnswer = inputElement.value;
   if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
     outputElement.textContent = "Correct!";
+    correctElement.textContent += "hi ";
   } else {
     outputElement.textContent = `Wrong. The correct answer was ${correctAnswer}.`;
   }
