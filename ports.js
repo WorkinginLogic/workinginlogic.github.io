@@ -12,6 +12,7 @@ hideButton.addEventListener("click", function () {
 var hideAnswers = document.getElementById("hideAnswers");
 var answers = document.querySelector("#answers");
 
+/*
 hideAnswers.addEventListener("click", function () {
   if (answers.style.display === "none") {
     answers.style.display = "block";
@@ -19,6 +20,7 @@ hideAnswers.addEventListener("click", function () {
     answers.style.display = "none";
   }
 });
+*/
 
 /* --- Ports --- */
 // Define an array of question-answer pairs
