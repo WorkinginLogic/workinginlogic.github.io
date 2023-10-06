@@ -12,7 +12,6 @@ hideButton.addEventListener("click", function () {
 var hideAnswers = document.getElementById("hideAnswers");
 var answers = document.querySelector("#answers");
 
-/*
 hideAnswers.addEventListener("click", function () {
   if (answers.style.display === "none") {
     answers.style.display = "block";
@@ -20,11 +19,10 @@ hideAnswers.addEventListener("click", function () {
     answers.style.display = "none";
   }
 });
-*/
 
 /* --- Ports --- */
 // Define an array of question-answer pairs
-const questionPairs = [
+const initialQuestionPairs = [
   { question: "ftp-data | File Transfer Protocol - Data", answer: "TCP 20" },
   { question: "ftp | File Transfer Protocol - Control", answer: "TCP 21" },
   { question: "ssh/sftp | Secure Shell / FTP over SSH", answer: "TCP 22" },
@@ -52,7 +50,8 @@ const questionPairs = [
   },
   {
     question:
-      "https | HTTP-Secure / Secure Sockets Layer(SSL) / Transport Layer Security(TLS)", answer: "TCP 443",
+      "https | HTTP-Secure / Secure Sockets Layer(SSL) / Transport Layer Security(TLS)",
+    answer: "TCP 443",
   },
   { question: "smb | Server Message Block over TCP / IP", answer: "TCP 445" },
   { question: "syslog | Syslog", answer: "UDP 514" },
@@ -75,20 +74,34 @@ const questionPairs = [
   { question: "sips | SIP-Secure", answer: "TCP/UDP 5061" },
 ];
 
+let questionPairs = [...initialQuestionPairs];
+
 currentQuestionIndex = Math.floor(Math.random() * questionPairs.length);
+let answeredCorrectly = [];
 
 // Function to generate a new question
 function generateNewQuestion(moduleId) {
-  const questionIndex = Math.floor(Math.random() * questionPairs.length);
-  const moduleIdElement = document.getElementById(moduleId);
-  const promptElement = moduleIdElement.querySelector(".prompt");
-  const inputElement = moduleIdElement.querySelector(".input");
+  if (questionPairs.length === 0) {
+    questionPairs.push(...answeredCorrectly);
+    answeredCorrectly = [];
+    correctElement.textContent = "";
+    alert("Congrats!");
+  } else {
+    let questionIndex;
+    if (questionPairs.length === 1) {
+      questionIndex = 0;
+    } else {
+      questionIndex = Math.floor(Math.random() * questionPairs.length);
+    }
+    const moduleIdElement = document.getElementById(moduleId);
+    const promptElement = moduleIdElement.querySelector(".prompt");
+    const inputElement = document.getElementById("userInput");
 
-  // Display the question
-  promptElement.textContent = questionPairs[questionIndex].question;
-  inputElement.value = "";
+    promptElement.textContent = questionPairs[questionIndex].question;
+    inputElement.value = "";
 
-  return questionPairs[questionIndex].answer;
+    return questionPairs[questionIndex].answer;
+  }
 }
 
 // Function to update the output
@@ -102,9 +115,16 @@ function updateOutput(moduleId, correctAnswer) {
   const userAnswer = inputElement.value;
   if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
     outputElement.textContent = "Correct!";
-    /*correctElement.textContent += "hi ";*/
+    answeredCorrectly.push(
+      questionPairs.find((q) => q.answer === correctAnswer)
+    );
+    questionPairs = questionPairs.filter((q) => q.answer !== correctAnswer);
+    correctElement.textContent +=
+      moduleIdElement.querySelector(".prompt").textContent + " ";
   } else {
     outputElement.textContent = `Wrong. The correct answer was ${correctAnswer}.`;
+    wrongElement.textContent +=
+      moduleIdElement.querySelector(".prompt").textContent + " ";
   }
 }
 
