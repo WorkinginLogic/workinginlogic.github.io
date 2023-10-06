@@ -107,13 +107,15 @@ pre {
 }
 
 
-.videos a {
+.module .videos li {
+  list-style-type: none;
+  text-align: left;
+}
+.module .videos a {
   color: #fe640b;
-  text-decoration: none;
-  padding: 25px;
 }
 
-.videos a:hover {
+.module .videos a:hover {
   color: #fab387;
 }
 
