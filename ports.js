@@ -79,6 +79,12 @@ let questionPairs = [...initialQuestionPairs];
 currentQuestionIndex = Math.floor(Math.random() * questionPairs.length);
 let answeredCorrectly = [];
 
+
+function transformAnswerToAsterisks(answer) {
+  return answer.replace(/[^ /]/g, '*');
+}
+
+
 // Function to generate a new question
 function generateNewQuestion(moduleId) {
   if (questionPairs.length === 0) {
@@ -97,10 +103,14 @@ function generateNewQuestion(moduleId) {
     const promptElement = moduleIdElement.querySelector(".prompt");
     const inputElement = document.getElementById("userInput");
 
+    const answer = questionPairs[questionIndex].answer;
+    const asteriskAnswer = transformAnswerToAsterisks(answer);
+    inputElement.placeholder = asteriskAnswer;
+
     promptElement.textContent = questionPairs[questionIndex].question;
     inputElement.value = "";
 
-    return questionPairs[questionIndex].answer;
+    return answer;
   }
 }
 
