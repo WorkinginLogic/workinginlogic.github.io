@@ -199,6 +199,20 @@ td {
 #question-prompt {
   box-sizing: border-box;
   width: calc(100% - 12px);
+  padding: 0%;
+}
+
+#question-prompt * {
+  padding: 5px;
+}
+
+input {
+  font-size: 20px;
+}
+
+input::placeholder {
+  font-size: 20px;
+  color:#222;
 }
 
 #wrong-answers {
@@ -228,6 +242,8 @@ td {
   border-radius: 12px;
   float: left;
 }
+
+
 
 /* Footer styles */
 footer {
