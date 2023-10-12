@@ -208,7 +208,7 @@ function generateNewQuestion(moduleId) {
   const correctElement = document.getElementById("correct-answers");
   const descriptionElement = document.getElementById("description");
 
-  if (questionPairs.length === 0) {
+  if (initialQuestionPairs.length === answeredCorrectly.length) {
     alert("Congrats! You've answered all questions correctly.");
     questionPairs = [...initialQuestionPairs];
     answeredCorrectly = [];
