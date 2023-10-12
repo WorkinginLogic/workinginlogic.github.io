@@ -23,55 +23,171 @@ hideAnswers.addEventListener("click", function () {
 /* --- Ports --- */
 // Define an array of question-answer pairs
 const initialQuestionPairs = [
-  { question: "ftp-data | File Transfer Protocol - Data", answer: "TCP 20" },
-  { question: "ftp | File Transfer Protocol - Control", answer: "TCP 21" },
-  { question: "ssh/sftp | Secure Shell / FTP over SSH", answer: "TCP 22" },
-  { question: "telnet | Telnet", answer: "TCP 23" },
-  { question: "smtp | Simple Mail Transfer Protocol", answer: "TCP 25" },
-  { question: "domain | Domain Name System", answer: "TCP/UDP 53" },
-  { question: "bootps | BOOTP/DHCP Server", answer: "UDP 67" },
-  { question: "bootpc | BOOTP/DHCP Client", answer: "UDP 68" },
-  { question: "tftp | Trivial File Transfer Protocol", answer: "UDP 69" },
-  { question: "http | HTTP", answer: "TCP 80" },
-  { question: "pop | Post Office Protocol", answer: "TCP 110" },
   {
-    question: "ntp/sntp | Network Time Protocol / Simple NTP",
-    answer: "UDP 123",
-  },
-  { question: "imap | Internet Message Access Protocol", answer: "TCP 143" },
-  { question: "snmp | Simple Network Management Protocol", answer: "UDP 161" },
-  {
-    question: "snmp-trap | Simple Network Management Protocol Trap",
-    answer: "UDP 162",
+    question: "ftp-data",
+    description: "File Transfer Protocol - Data",
+    answer: "TCP 20"
   },
   {
-    question: "ldap | Lightweight Directory Access Protocol",
-    answer: "TCP/UDP 389",
+    question: "ftp",
+    description: "File Transfer Protocol - Control",
+    answer: "TCP 21"
   },
   {
-    question:
-      "https | HTTP-Secure / Secure Sockets Layer(SSL) / Transport Layer Security(TLS)",
-    answer: "TCP 443",
+    question: "ssh/sftp",
+    description: "Secure Shell / FTP over SSH",
+    answer: "TCP 22"
   },
-  { question: "smb | Server Message Block over TCP / IP", answer: "TCP 445" },
-  { question: "syslog | Syslog", answer: "UDP 514" },
-  { question: "dhcpv6-client | DHCP6 Client", answer: "UDP 546" },
-  { question: "dhcpv6-server | DHCP6 Server", answer: "TCP 547" },
-  { question: "smtps | SMTP - Secure", answer: "TCP 587" },
-  { question: "ldaps | LDAP - Secure", answer: "TCP 636" },
-  { question: "imaps | IMAP - Secure", answer: "TCP 993" },
-  { question: "pop3s | POP3 - Secure", answer: "TCP 995" },
   {
-    question: "sql-server | MS Structured Query Language (SQL) Server",
-    answer: "TCP 1433",
+    question: "telnet",
+    description: "Telnet",
+    answer: "TCP 23"
   },
-  { question: "sqlnet | Oracle SQL *Net", answer: "TCP 1521" },
-  { question: "mysql | MySQL / MariaDB", answer: "TCP 3306" },
-  { question: "rdp | Remote Desktop Protocol", answer: "TCP 3389" },
-  { question: "rtp | Real - Time Protocol", answer: "UDP 5004" },
-  { question: "rtcp | Real - Time Control Protocol", answer: "UDP 5005" },
-  { question: "sip | Session Initiation Protocol", answer: "TCP/UDP 5060" },
-  { question: "sips | SIP-Secure", answer: "TCP/UDP 5061" },
+  {
+    question: "smtp",
+    description: "Simple Mail Transfer Protocol",
+    answer: "TCP 25"
+  },
+  {
+    question: "domain",
+    description: "Domain Name System",
+    answer: "TCP/UDP 53"
+  },
+  {
+    question: "bootps",
+    description: "BOOTP/DHCP Server",
+    answer: "UDP 67"
+  },
+  {
+    question: "bootpc",
+    description: "BOOTP/DHCP Client",
+    answer: "UDP 68"
+  },
+  {
+    question: "tftp",
+    description: "Trivial File Transfer Protocol",
+    answer: "UDP 69"
+  },
+  {
+    question: "http",
+    description: "HTTP",
+    answer: "TCP 80"
+  },
+  {
+    question: "pop",
+    description: "Post Office Protocol",
+    answer: "TCP 110"
+  },
+  {
+    question: "ntp/sntp",
+    description: "Network Time Protocol / Simple NTP",
+    answer: "UDP 123"
+  },
+  {
+    question: "imap",
+    description: "Internet Message Access Protocol",
+    answer: "TCP 143"
+  },
+  {
+    question: "snmp",
+    description: "Simple Network Management Protocol",
+    answer: "UDP 161"
+  },
+  {
+    question: "snmp-trap",
+    description: "Simple Network Management Protocol Trap",
+    answer: "UDP 162"
+  },
+  {
+    question: "ldap",
+    description: "Lightweight Directory Access Protocol",
+    answer: "TCP/UDP 389"
+  },
+  {
+    question: "https",
+    description: "HTTP-Secure / Secure Sockets Layer(SSL) / Transport Layer Security(TLS)",
+    answer: "TCP 443"
+  },
+  {
+    question: "smb",
+    description: "Server Message Block over TCP / IP",
+    answer: "TCP 445"
+  },
+  {
+    question: "syslog",
+    description: "Syslog",
+    answer: "UDP 514"
+  },
+  {
+    question: "dhcpv6-client",
+    description: "DHCP6 Client",
+    answer: "UDP 546"
+  },
+  {
+    question: "dhcpv6-server",
+    description: "DHCP6 Server",
+    answer: "TCP 547"
+  },
+  {
+    question: "smtps",
+    description: "SMTP - Secure",
+    answer: "TCP 587"
+  },
+  {
+    question: "ldaps",
+    description: "LDAP - Secure",
+    answer: "TCP 636"
+  },
+  {
+    question: "imaps",
+    description: "IMAP - Secure",
+    answer: "TCP 993"
+  },
+  {
+    question: "pop3s",
+    description: "POP3 - Secure",
+    answer: "TCP 995"
+  },
+  {
+    question: "sql-server",
+    description: "MS Structured Query Language (SQL) Server",
+    answer: "TCP 1433"
+  },
+  {
+    question: "sqlnet",
+    description: "Oracle SQL *Net",
+    answer: "TCP 1521"
+  },
+  {
+    question: "mysql",
+    description: "MySQL / MariaDB",
+    answer: "TCP 3306"
+  },
+  {
+    question: "rdp",
+    description: "Remote Desktop Protocol",
+    answer: "TCP 3389"
+  },
+  {
+    question: "rtp",
+    description: "Real - Time Protocol",
+    answer: "UDP 5004"
+  },
+  {
+    question: "rtcp",
+    description: "Real - Time Control Protocol",
+    answer: "UDP 5005"
+  },
+  {
+    question: "sip",
+    description: "Session Initiation Protocol",
+    answer: "TCP/UDP 5060"
+  },
+  {
+    question: "sips",
+    description: "SIP-Secure",
+    answer: "TCP/UDP 5061"
+  }
 ];
 
 let questionPairs = [...initialQuestionPairs];
@@ -101,6 +217,7 @@ function generateNewQuestion(moduleId) {
     }
     const moduleIdElement = document.getElementById(moduleId);
     const promptElement = moduleIdElement.querySelector(".prompt");
+    const descriptionElement = document.getElementById("description");
     const inputElement = document.getElementById("userInput");
 
     const answer = questionPairs[questionIndex].answer;
@@ -108,6 +225,7 @@ function generateNewQuestion(moduleId) {
     inputElement.placeholder = asteriskAnswer;
 
     promptElement.textContent = questionPairs[questionIndex].question;
+    descriptionElement.textContent = questionPairs[questionIndex].description;
     inputElement.value = "";
 
     return answer;
@@ -133,8 +251,10 @@ function updateOutput(moduleId, correctAnswer) {
       moduleIdElement.querySelector(".prompt").textContent + " ";
   } else {
     outputElement.textContent = `Wrong. The correct answer was ${correctAnswer}.`;
-    wrongElement.textContent +=
-      moduleIdElement.querySelector(".prompt").textContent + " ";
+
+    if (!wrongElement.textContent.includes(moduleIdElement.querySelector(".prompt").textContent)) {
+      wrongElement.textContent += moduleIdElement.querySelector(".prompt").textContent + " ";
+    }
   }
 }
 
