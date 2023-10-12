@@ -209,10 +209,10 @@ function generateNewQuestion(moduleId) {
   const descriptionElement = document.getElementById("description");
 
   if (questionPairs.length === 0) {
-    questionPairs.push(...answeredCorrectly);
+    alert("Congrats! You've answered all questions correctly.");
+    questionPairs = [...initialQuestionPairs];
     answeredCorrectly = [];
     correctElement.textContent = "Correct: ";
-    alert("Congrats!");
   } else {
     let questionIndex = Math.floor(Math.random() * questionPairs.length);
 
