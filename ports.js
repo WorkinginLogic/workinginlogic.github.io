@@ -211,7 +211,7 @@ function generateNewQuestion(moduleId) {
   if (questionPairs.length === 0) {
     questionPairs.push(...answeredCorrectly);
     answeredCorrectly = [];
-    correctElement.textContent = "";
+    correctElement.textContent = "Correct: ";
     alert("Congrats!");
   } else {
     let questionIndex = Math.floor(Math.random() * questionPairs.length);
