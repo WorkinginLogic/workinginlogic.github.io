@@ -192,6 +192,7 @@ const initialQuestionPairs = [
 ];
 
 let questionPairs = [...initialQuestionPairs];
+const inputElement = document.getElementById("userInput");
 
 currentQuestionIndex = Math.floor(Math.random() * questionPairs.length);
 let answeredCorrectly = [];
@@ -204,8 +205,8 @@ function transformAnswerToAsterisks(answer) {
 function generateNewQuestion(moduleId) {
   const moduleIdElement = document.getElementById(moduleId);
   const promptElement = moduleIdElement.querySelector(".prompt");
+  const correctElement = document.getElementById("correct-answers");
   const descriptionElement = document.getElementById("description");
-  const inputElement = document.getElementById("userInput");
 
   if (questionPairs.length === 0) {
     questionPairs.push(...answeredCorrectly);
@@ -232,7 +233,6 @@ function generateNewQuestion(moduleId) {
 // Function to update the output
 function updateOutput(moduleId, correctAnswer) {
   const moduleIdElement = document.getElementById(moduleId);
-  const inputElement = document.getElementById("userInput");
   const outputElement = moduleIdElement.querySelector(".output");
   const correctElement = document.getElementById("correct-answers");
   const wrongElement = document.getElementById("wrong-answers");
@@ -266,7 +266,6 @@ function updateOutput(moduleId, correctAnswer) {
 
 const moduleId = "question-prompt";
 const submitButton = document.getElementById("submitBtn");
-const userInput = document.getElementById("userInput");
 
 let correctAnswer = generateNewQuestion(moduleId);
 
@@ -275,7 +274,7 @@ submitButton.addEventListener("click", function () {
   correctAnswer = generateNewQuestion(moduleId);
 });
 
-userInput.addEventListener("keydown", function (event) {
+inputElement.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
     updateOutput(moduleId, correctAnswer);
