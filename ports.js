@@ -241,6 +241,7 @@ function updateOutput(moduleId, correctAnswer) {
   const wrongElement = document.getElementById("wrong-answers");
 
   const userAnswer = inputElement.value;
+  const promptText = moduleIdElement.querySelector(".prompt").textContent;
   if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
     outputElement.textContent = "Correct!";
     answeredCorrectly.push(
@@ -249,10 +250,14 @@ function updateOutput(moduleId, correctAnswer) {
     questionPairs = questionPairs.filter((q) => q.answer !== correctAnswer);
     correctElement.textContent +=
       moduleIdElement.querySelector(".prompt").textContent + " ";
+
+    if (wrongElement.textContent.includes(promptText)) {
+      wrongElement.textContent = wrongElement.textContent.replace(promptText, "");
+    }
   } else {
     outputElement.textContent = `Wrong. The correct answer was ${correctAnswer}.`;
 
-    if (!wrongElement.textContent.includes(moduleIdElement.querySelector(".prompt").textContent)) {
+    if (!wrongElement.textContent.includes(promptText)) {
       wrongElement.textContent += moduleIdElement.querySelector(".prompt").textContent + " ";
     }
   }
