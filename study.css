@@ -207,11 +207,13 @@ td {
 }
 
 input {
-  font-size: 20px;
+  box-sizing: border-box; 
+  padding: 5px; 
+  width: auto;
+  min-width: 500px; 
 }
 
 input::placeholder {
-  font-size: 20px;
   color:#222;
 }
 
