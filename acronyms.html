@@ -3,10 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Network Plus Acronym List" />
+    <meta name="description" content="Network Plus Common TCP and UDP Ports" />
     <link rel="stylesheet" type="text/css" href="study.css" />
     <title>Working in Logic</title>
-    <link rel="stylesheet" href="study.css" />
     <link rel="icon" type"image/x-icon" href="slidelie.png">
   </head>
   <body>
@@ -16,34 +15,39 @@
         <li><a href="practice.html">practice</a></li>
         <li><a href="acronyms.html">acronyms</a></li>
         <li><a href="ports.html">ports</a></li>
-        <li><a href="materials.html">materials</a></li> 
+        <li><a href="materials.html">materials</a></li>
         <li>
-          <button id="hideAnswers" class="navButton">Answers</button>
+          <button id="hideAnswers" class="navButton">answers</button>
         </li>
         <li>
-          <button id="hideWords" class="navButton">Word List</button>
+            <button id="hide" class="navButton">reference</button>
         </li>
-      </ul>
     </section>
-    <section id="wordList" class="module">word list here</section>
+
     <section id="question-prompt" class="module">
-      <h2>Title</h2>
-      <p>Question:<span class="prompt"></span></p>
+      <h2>Network+ Acronyms</h2>
+      <p>Question, What is the full form of the acronym:</p>
+      <span class="prompt"></span>
+      <p><span id="description"></span></p>
       <p>
         Answer:
         <input
         type="text"
         id="userInput"
-        placeholder="stuff here"
+        class="input"
+        placeholder=" "
         />
-        <button id="binaryButton">Submit</button>
+        <button id="submitBtn">Submit</button>
         <p id="output" class="output"></p>
       </p>
     </section>
+    
+    
     <section id="answers">
-      <section id="correct-answers" class="module">correct</section> 
-      <section id="wrong-answers" class="module">wrong</section>
+      <section id="correct-answers" class="module">Correct: </section> 
+      <section id="wrong-answers" class="module">Wrong: </section>
     </section>
+ 
     <script src="acronyms.js"></script>
   </body>
 </html>

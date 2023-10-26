@@ -239,27 +239,30 @@ function updateOutput(moduleId, correctAnswer) {
   const userAnswer = inputElement.value;
   const promptText = moduleIdElement.querySelector(".prompt").textContent;
   
-  const isCorrect = userAnswer.toLowerCase() === correctAnswer.toLowerCase();
 
-  if (isCorrect) {
-    outputElement.textContent = "Correct!";
-    const matchingQuestion = questionPairs.find((q) => q.answer === correctAnswer);
+  if (correctAnswer) {
+    const isCorrect = userAnswer.toLowerCase() === correctAnswer.toLowerCase();
 
-    if (matchingQuestion) {
-      answeredCorrectly.push(matchingQuestion);
-      questionPairs = questionPairs.filter((q) => q.answer !== correctAnswer);
-    }
+    if (isCorrect) {
+      outputElement.textContent = "Correct!";
+      const matchingQuestion = questionPairs.find((q) => q.answer === correctAnswer);
 
-    correctElement.textContent += promptText + " ";
+      if (matchingQuestion) {
+        answeredCorrectly.push(matchingQuestion);
+        questionPairs = questionPairs.filter((q) => q.answer !== correctAnswer);
+      }
 
-    if (wrongElement.textContent.includes(promptText)) {
-      wrongElement.textContent = wrongElement.textContent.replace(promptText, "");
-    }
-  } else {
-    outputElement.textContent = `Wrong. The correct answer was ${correctAnswer}`;
+      correctElement.textContent += promptText + " ";
 
-    if (!wrongElement.textContent.includes(promptText)) {
-      wrongElement.textContent += promptText + " ";
+      if (wrongElement.textContent.includes(promptText)) {
+        wrongElement.textContent = wrongElement.textContent.replace(promptText, "");
+      }
+    } else {
+      outputElement.textContent = `Wrong. The correct answer was ${correctAnswer}`;
+
+      if (!wrongElement.textContent.includes(promptText)) {
+        wrongElement.textContent += promptText + " ";
+      }
     }
   }
 }
