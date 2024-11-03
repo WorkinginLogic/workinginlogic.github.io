@@ -3,18 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="zoom zoom">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>FPV</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <title>William McNew</title>
+    <link href='https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap' rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
 </head>
-<body> 
-    <section id="about">
-        <div>
-            <video controls>
-            <source src="img/QNT.mp4" type="video/mp4">
-            </video>
+<body>
+
+    <!-- Header Section with Menu Button for Small Screens -->
+    <header>
+        <div id="menubar">
+            <span id="menubutton" onclick="menu_open()">☰</span>
         </div>
-    </section>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar">
+        <span id="menu">
+            <span id="menuitems">
+                <a href="index.html">Home</a>
+                <a href="blog.html">Blog</a>
+                <a href="#contact">Contact</a>
+            </span>
+
+            <span id="socialmedia">
+                <span class='smicon'><a href='https://github.com/WorkinginLogic' target='_blank'><img src='img/sm_gh.png'></a></span>
+                <span class='smicon'><a href='https://tryhackme.com/r/p/workinginlogic' target='_blank'><img src='img/sm_thm.png'></a></span>
+                <span class='smicon'><a href='https://x.com/WilliamAFK' target='_blank'><img src='img/sm_tw.png'></a></span>
+                <span class='smicon'><a href='https://www.linkedin.com/in/workinginlogic/' target='_blank'><img src='img/sm_li.png'></a></span>
+              </span>
+
+            <span id="year"></span>
+        </span>
+    </nav>
+
+    <!-- Overlay for Mobile Sidebar -->
+    <div id="overlay" onclick="menu_close()"></div>
+
+    <!-- Main Content Section -->
+    <div class="content-wrapper">
+        <main class="container">
+            <p style='text-align: left;'>
+                <img src='img/photo.png'>
+            </p>
+            <section>
+                <h2>About</h2><hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vulputate libero a mauris cursus, in fermentum elit fermentum. Quisque at egestas metus.</p>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2><hr>
+                <span>
+                    Email <a href="mailto:workinginlogic@gmail.com">workinginlogic@gmail.com</a>
+                </span>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function menu_open() {
+            document.getElementById('sidebar').style.display = 'block'; // Show the sidebar
+            document.getElementById('overlay').style.display = 'block'; // Show the overlay
+        }
+
+        function menu_close() {
+            document.getElementById('sidebar').style.display = 'none'; // Hide the sidebar
+            document.getElementById('overlay').style.display = 'none'; // Hide the overlay
+        }
+
+        // Close menu on window resize for better UX
+        window.addEventListener("resize", function() {
+            if (window.innerWidth >= 768) {
+                document.getElementById('sidebar').style.display = 'block'; // Show sidebar
+                document.getElementById('overlay').style.display = 'none'; // Hide overlay
+            } else {
+                document.getElementById('sidebar').style.display = 'none'; // Hide sidebar on smaller screens
+            }
+        });
+
+        document.getElementById('year').innerHTML = '&copy; ' + new Date().getFullYear() + ' William M.';
+    </script>
 </body>
 </html>
