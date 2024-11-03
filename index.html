@@ -9,14 +9,12 @@
 </head>
 <body>
 
-    <!-- Header Section with Menu Button for Small Screens -->
     <header>
         <div id="menubar">
             <span id="menubutton" onclick="menu_open()">☰</span>
         </div>
     </header>
 
-    <!-- Sidebar Navigation -->
     <nav id="sidebar">
         <span id="menu">
             <span id="menuitems">
@@ -36,10 +34,8 @@
         </span>
     </nav>
 
-    <!-- Overlay for Mobile Sidebar -->
     <div id="overlay" onclick="menu_close()"></div>
 
-    <!-- Main Content Section -->
     <div class="content-wrapper">
         <main class="container">
             <p style='text-align: left;'>
@@ -70,7 +66,6 @@
             document.getElementById('overlay').style.display = 'none'; // Hide the overlay
         }
 
-        // Close menu on window resize for better UX
         window.addEventListener("resize", function() {
             if (window.innerWidth >= 768) {
                 document.getElementById('sidebar').style.display = 'block'; // Show sidebar
